@@ -15,8 +15,8 @@ use App\Http\Controllers\StudentController;
 */
 
 Route::get('/', [StudentController::class, 'createToken']);
-Route::get('/students', [StudentController::class, 'index']);
-Route::post('/students/store', [StudentController::class, 'store']);
-Route::get('/students/{id}', [StudentController::class, 'show']);
-Route::patch('/students/{id}/update', [StudentController::class, 'update']);
-Route::delete('/students/{id}/delete', [StudentController::class, 'destroy']);
+// Route::get('/students', [StudentController::class, 'index']);
+// Route::post('/students/store', [StudentController::class, 'store']);
+// Route::get('/students/{id}', [StudentController::class, 'show']);
+// Route::patch('/students/{id}/update', [StudentController::class, 'update']);
+// Route::delete('/students/{id}/delete', [StudentController::class, 'destroy']);

@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\StudentController;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +18,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('students', [StudentController::class, 'index']);
-
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Route::get('/', [StudentController::class, 'createToken']);
+Route::get('/students', [StudentController::class, 'index']);
+Route::post('/students/store', [StudentController::class, 'store']);
+Route::get('/students/{id}', [StudentController::class, 'show']);
+Route::patch('/students/update/{id}', [StudentController::class, 'update']);
+Route::delete('/students/delete/{id}', [StudentController::class, 'destroy']);
+
+Route::get('/images', [ImageController::class, 'index']);
+Route::post('/images/store', [ImageController::class, 'store']);
+
+Route::get('/albums', [AlbumController::class, 'index']);
+Route::post('/albums/store', [AlbumController::class, 'store']);
