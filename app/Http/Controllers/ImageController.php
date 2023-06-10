@@ -29,10 +29,10 @@ class ImageController extends Controller
             ]);
 
             $image = null;
-            if($request->file){
-                $extension = $request->file('file')->getClientOriginalExtension();
+            if($request->image){
+                $extension = $request->file('image')->getClientOriginalExtension();
                 $newName = $request->title.'-'.now()->timestamp.'.'.$extension;
-                $request->file('file')->move(public_path('/storage/'), $newName);
+                $request->file('image')->move(public_path('/storage/'), $newName);
             }
             $request['image'] = $newName;
             $create = Image::create($request->all());
